@@ -17,7 +17,14 @@
         # elif the board is full -- print message, set active to false
         # elif switch current player and next player
 
-
+active = True
+current_player = "X"
+next_player = "O"
+SPACES = list('123456789')
+game_board = {}
+for s in SPACES:
+    game_board[s] = " "
+    
 def print_board(b) :
     print(f'''
         {b['1']} | {b['2']} | {b['3']} 1 2 3
@@ -39,13 +46,6 @@ def check_winner(b, player) :
         b['3'] == b['5'] == b['7'] == player
         )
 
-active = True
-current_player = "X"
-next_player = "O"
-SPACES = list('123456789')
-game_board = {}
-for s in SPACES:
-    game_board[s] = " "
 
 while active :
     print_board(game_board)
